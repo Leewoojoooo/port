@@ -1,0 +1,20 @@
+    <% if(subFiles.length !== 0) {%>
+        <% for(let i=0; i<subFiles.length; i++){ %>
+            <link rel="stylesheet" href="/css/<%- subFiles[i] %>">
+        <% } %>
+    <% } %>
+    <div id="header">
+        <div class="center">
+            <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+            <h2 class="woman">WOMAN</h2>
+            <ul class="gnb">
+                <li><a href="/sub">ALL</a></li>
+                <li><a href="/sub/top">TOP</a></li>
+                <li><a href="#">SHOES</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">SERCH</a></li>
+            </ul>
+        </div>
+    </div>
+</body>

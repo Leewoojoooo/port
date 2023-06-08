@@ -1,0 +1,8 @@
+#footer {display: flex; justify-content: center; text-align: center; background-color: #fff; padding: 100px 0;}
+#footer .center {width: 1500px;}
+#footer .center .title {line-height: 28px; color: gray; font-size: 14px;}
+#footer .center .title .sing { margin-bottom: 30px;}
+#footer .center .title .tik {font-size: 15px; margin-bottom: 30px; font-weight: bold;}
+#footer .center .title .company {font-size: 15px; margin-bottom: 30px;}
+#footer .center .title .fix {position: fixed; bottom:200px; right: 200px; color: #000; opacity: 0; transform: translateY(50px); transition: all 0.5s; pointer-events: all;}
+#footer .center .title .fix.on {position: fixed; bottom:200px; right: 200px; color: #000; opacity: 1; transform: translateY(0px);}

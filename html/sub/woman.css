@@ -1,0 +1,74 @@
+* {margin: 0; padding: 0;}
+img {vertical-align: top;}
+li,ul,ol {list-style: none;}
+a {text-decoration: none;}
+body {line-height: 1;}
+
+
+
+/* header */
+#header {padding: 60px 0; width: 100%; position: fixed;}
+#header .center .logo {margin-bottom: 40px;  position: fixed; top: 40px; left: 33px; opacity: 1;}
+#header .center .woman {font-size: 32px; margin-bottom: 30px; font-family: 'Lora', serif; font-weight: 200; text-align: center;color: #000;}
+#header.on .center .woman {color: #fff;}
+#header .center img {width: 320px;}
+#header .center .gnb {display: flex; justify-content: center;}
+#header .center .menu {display: flex; position: absolute; top: 0; right: 0;}
+#header .center .gnb > li {margin: 0 15px;}
+#header .center .gnb > li > a {color: #000; font-family: 'Lora', serif; font-weight: 200; font-size: 18px;}
+#header.on .center .gnb > li > a {color: #fff;}
+#header .center .gnb > li > a:hover {text-decoration: underline; transition: all 0.5s;}
+
+/*sub1*/
+#container .sub1 {display: flex; justify-content: center;}
+#container .sub1 .center {width: 1500px;}
+#container .sub1 .center img {width: 100%;}
+#container .sub1 .center .title {text-align: center; line-height: 28px; margin: 100px 0; }
+#container .sub1 .center .title h3 {font-family: 'Lora', serif; font-size: 20px;}
+#container .sub1 .center .title .won {font-size: 14px;}
+
+/*sub2*/
+#container .sub2 {display: flex; justify-content: center;}
+#container .sub2 .center {width: 1200px; display: flex; justify-content: space-between;}
+#container .sub2 .center .top img {width: 500px;}
+#container .sub2 .center .bot img {width: 500px; margin-top: 350px;}
+
+
+/*sub2_2*/
+#container .sub2_2 {display: flex; justify-content: center; margin: 200px 0;}
+#container .sub2_2 .center {width: 100%;}
+#container .sub2_2 .center .woman {width: 100%; display: flex; justify-content: space-between;}
+#container .sub2_2 .center .woman > div {width: 500px;}
+#container .sub2_2 .center .woman > div > img {width: 100%; height: 100%;}
+#container .sub2_2 .center .woman > div > .title {margin-left: 20px; margin-top: 20px;}
+
+/*sub2_3*/
+#container .sub2_3 {display: flex; justify-content: center;}
+#container .sub2_3 .center{width: 1500px;}
+#container .sub2_3 .center .best {width: 100%; display: flex; justify-content: space-between;}
+#container .sub2_3 .center .best > div {width: 360px;}
+#container .sub2_3 .center .best > div > img {width: 100%; transition: all 0.5s;}
+#container .sub2_3 .center .best > div:hover {background-image: url(../img/woman/sub2_3_top1_tr.jpg);}
+
+
+
+#container .sub3 {display: flex; justify-content: center; margin-top: 200px;}
+#container .sub3 .center {width: 900px;}
+#container .sub3 .center .womanlist {display: flex; justify-content: space-between; flex-wrap: wrap;}
+#container .sub3 .center .womanlist .list img {width: 400px;}
+#container .sub3 .center .womanlist .list {margin-top: 60px; margin-bottom: 300px;}
+#container .sub3 .center .womanlist .list .title {display: flex; justify-content: space-between;margin-top: 10px;}
+#container .sub3 .center .womanlist .list .title p {font-size: 14px;}
+
+#container .main4 .center .top .title {margin-top: 80px; margin-right: 55px; text-align: end;}
+#container .main4 .center .top .title h3 {font-size: 36px; font-family: 'Lora', serif; font-weight: 300; margin-bottom: 50px;}
+#container .main4 .center .top .title p {line-height: 28px;  font-size: 14px;}
+/*footer*/
+#footer {display: flex; justify-content: center; text-align: center; background-color: #fff; padding: 100px 0;}
+#footer .center {width: 1500px;}
+#footer .center .title {line-height: 28px; color: gray; font-size: 14px;}
+#footer .center .title .sing { margin-bottom: 30px;}
+#footer .center .title .tik {font-size: 15px; margin-bottom: 30px; font-weight: bold;}
+#footer .center .title .company {font-size: 15px; margin-bottom: 30px;}
+#footer .center .title .fix {position: fixed; bottom:200px; right: 200px; color: #000; opacity: 0; transform: translateY(50px); transition: all 0.5s; pointer-events: all;}
+#footer .center .title .fix.on {position: fixed; bottom:200px; right: 200px; color: #000; opacity: 1; transform: translateY(0px);}

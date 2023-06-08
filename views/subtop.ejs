@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/subtop.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="bg">
+        <div>만나보세요</div>
+    </div>
+    <%- include("subheader.ejs", {title:"sub",subFiles:["subheader.css"]}) %>
+    <div id="container" >
+        <div class="sub1" style="padding-top: 260px;">
+            <div class="center">
+                <div class="title">
+                    <h3>스타일을 완성하는 여성 탑</h3>
+                    <p>여성 탑 컬렉션은 오프 숄더 스타일, 홀터넥, 캐미솔 또는 니트 저지 티셔츠까지, 모든 아웃핏에 잘 어울리는 아이템들을 소개합니다.<br> 
+                        이번 시즌 클래식한 블랙, 화이트, 핑크, 네이비 블록 컬러는 시퀸 탑부터 스테이트먼트 애니멀 프린트,<br>
+                        오리지널 슬로건 티셔츠까지의 디테일을 만나보세요. 나만의 데일리룩을 지금 완성해보세요.</p>
+                </div>
+            </div>
+        </div>
+        <div class="sub3">
+            <div class="center">
+                <div class="womanlist"></div>
+            </div>
+        </div>
+        <div class="sub4">
+            <div class="center">
+                <div class="img">
+                    <img src="/img/woman/sub3_list11.jpg">
+                </div>
+                <div class="img">
+                    <img src="/img/woman/woman_top/banner.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs", {title:"footer",footerFile:["footer.css"]}) %>
+    <script src="/js/subtop.js"></script>
+</body>
+</html>
