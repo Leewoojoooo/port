@@ -13,11 +13,16 @@
 </head>
 <body>
     <div id="bg">
-        <div>만나보세요</div>
+        <div>나만의 데일리룩을 지금 완성해보세요.</div>
     </div>
     <%- include("subheader.ejs", {title:"sub",subFiles:["subheader.css"]}) %>
+    <div class="videobox">
+        <video muted autoplay loop>
+            <source src="/img/woman/woman_top/ZARA video.mp4">
+        </video>
+    </div>
     <div id="container" >
-        <div class="sub1" style="padding-top: 260px;">
+        <div class="sub1">
             <div class="center">
                 <div class="title">
                     <h3>스타일을 완성하는 여성 탑</h3>
@@ -34,16 +39,26 @@
         </div>
         <div class="sub4">
             <div class="center">
-                <div class="img">
+                <!-- <div class="img">
                     <img src="/img/woman/sub3_list11.jpg">
-                </div>
-                <div class="img">
-                    <img src="/img/woman/woman_top/banner.jpg">
+                </div> -->
+                <div class="bot">
+                    <div class="title">
+                        <p class="hig">다양한 여성 세트 상품</p>
+                        <h4 class="zara">ZARA</h4>
+                        <p class="text">이번 시즌 세트 상품보다 더 쉬운 코디 방법이 있을까요? 이번 시즌 포근한 니트웨어 세트부터<br> 프린트 탑과 스커트 세트 상품까지,
+                             모든 소재와 스타일의 세트 상품을 확인해보세요.<br> 쉬운 스타일링을 위해 세트 상품을 함께 코디하거나 다른 아이템과 매치해 색다른 스타일을 완성해보세요.</p>
+                        <a href="#">감상하기</a>
+                    </div>
+                    <div>
+                        <img src="/img/woman/sub3_list11.jpg">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <%- include("footer.ejs", {title:"footer",footerFile:["footer.css"]}) %>
     <script src="/js/subtop.js"></script>
+    <script src="/js/footer.js"></script>
 </body>
 </html>

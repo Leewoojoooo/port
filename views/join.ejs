@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지(자바스크립트 정규표현식은 본인이 직접 반영)</title>
+    <link rel="stylesheet" href="/css/join.css">
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div class="title">
+                <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+            </div>
+            <div class="list">
+                <div class="won">
+                    <p>개인정보</p>
+                </div>
+            </div>
+        </div>
+        <div class="center2">
+            <div class="title2">
+                <form id="join_form" action="/joindb" method="post">
+                    <input type="text" name="memberid" id="idInput" class="text" placeholder="이메일">
+                    <p id="idError" style="color: red;"></p> <!-- 아이디 유효성 오류 메시지 출력 영역 -->
+                    <input type="password" name="memberpass" id="passwordInput" class="password"  required>
+                    <p id="passwordError" style="color: red;"></p> <!-- 비밀번호 유효성 오류 메시지 출력 영역 -->
+                    <div class="flex">
+                        <button type="submit">회원가입</button>
+                        <a href="/subwoman">취소</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 아이디 입력 요소와 오류 메시지 출력 요소를 변수로 할당
+        const idInput = document.getElementById('idInput');
+        const idError = document.getElementById('idError');
+    
+        // 아이디 입력 시 유효성 검사
+        idInput.addEventListener('input', validateId);
+    
+        function validateId() {
+            const id = idInput.value;
+    
+            // 아이디 유효성 검사 정규 표현식
+            const regex = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
+    
+            if (regex.test(id)) {
+                idError.textContent = ''; // 오류 메시지 초기화
+            } else {
+                idError.textContent = '영문자로 시작하는 영문자 또는 숫자 6~20자여야 합니다.';
+            }
+        }
+    
+        // 비밀번호 입력 요소와 오류 메시지 출력 요소를 변수로 할당
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordError = document.getElementById('passwordError');
+    
+        // 비밀번호 입력 시 유효성 검사
+        passwordInput.addEventListener('input', validatePassword);
+    
+        function validatePassword() {
+            const password = passwordInput.value;
+    
+            // 비밀번호 유효성 검사 정규 표현식
+            const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
+    
+            if (regex.test(password)) {
+                passwordError.textContent = ''; // 오류 메시지 초기화
+            } else {
+                passwordError.textContent = '8 ~ 16자의 영문, 숫자, 특수문자를 최소 한 가지씩 조합해야 합니다.';
+            }
+        }
+    </script>
+</body>
+</html>

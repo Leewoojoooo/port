@@ -16,6 +16,32 @@ window.onscroll = function() {
 
 
 
+let text = "SUNLIGHT";
+    let serveText = "";
+    let i = 0;
+    const typing = document.querySelector(" .title .typing");
+
+    let autoTyping = setInterval(function(){
+      startTyping();
+    }, 100);
+
+    function startTyping(){
+      serveText = text[i];
+      i += 1;
+      typing.innerText += serveText;
+
+      if(i > text.length - 1){
+        clearInterval(autoTyping);
+        setTimeout(function(){
+          typing.innerText = "";
+          i = 0;
+          autoTyping = setInterval(function(){
+            startTyping();
+          }, 100);
+        }, 2000);
+      }
+    }
+
 //sub3
 
 
@@ -160,3 +186,90 @@ window.onscroll = function() {
 
 // // container에 sub 변수에 저장된 HTML 추가
 // document.querySelector("#container").innerHTML += sub;
+
+
+
+
+const moreBtn = document.querySelector(".more1");
+const moreBtn2 = document.querySelector(".more2");
+const box = document.querySelectorAll(".sub2_3 .center .best > div");
+
+console.log(window.scrollY);
+
+let start = 4;
+let start2 = 4;
+
+moreBtn.onclick = function(){
+  for( let i= start; i< start + 4; i++ ){
+    box[i].style.display = "block";
+  }
+  start = start +4;
+  if(start >= box.length){
+    moreBtn.style.display = "none";
+    moreBtn2.style.display = "block";
+  }
+}
+
+
+moreBtn2.onclick = function(){
+  for(let i= box.length-1; i>= start2; i--){
+    box[i].style.display = "none";
+  }
+  moreBtn2.style.display = "none";
+  moreBtn.style.display = "inline-block";
+  start = start2;
+
+  window.scrollTo({
+    top: 3148,
+    behavior: "smooth"
+  });
+}
+
+
+
+
+
+
+// const fix = document.querySelector (".fix");
+// console.log(fix);
+
+// fix.onclick = function(e){
+//   e.preventDefault;
+//   window.scrollTo({
+//       top:0,
+//       behavior:"smooth"
+//   });
+// }
+
+
+document.querySelector('.woman .top').addEventListener('click', function() {
+  // 새로운 페이지로 이동할 URL 설정
+  let url = 'http://localhost:3300/sub/top';
+
+  // 페이지 이동
+  window.location.href = url;
+});
+
+document.querySelector('.woman .pants').addEventListener('click', function() {
+  // 새로운 페이지로 이동할 URL 설정
+  let url = 'http://localhost:3300/sub/pants';
+
+  // 페이지 이동
+  window.location.href = url;
+});
+
+document.querySelector('.woman .shoes').addEventListener('click', function() {
+  // 새로운 페이지로 이동할 URL 설정
+  let url = 'http://localhost:3300/sub/shoes';
+
+  // 페이지 이동
+  window.location.href = url;
+});
+
+document.querySelector('.woman .Accessories').addEventListener('click', function() {
+  // 새로운 페이지로 이동할 URL 설정
+  let url = 'http://localhost:3300/sub/Accessories';
+
+  // 페이지 이동
+  window.location.href = url;
+});

@@ -79,17 +79,21 @@ body {line-height: 1;}
 #container .main3 .center .imgs .top:hover { filter: grayscale(0);}
 
 /*main4*/
-#container .main4 {display: flex; justify-content: center; margin-bottom: 100px;}
+#container .main4 {display: flex; justify-content: center; margin-bottom: 100px; padding: 100px 0;}
 #container .main4 .center {width: 1100px; display: flex; justify-content: space-between;}
-#container .main4 .center .top img {width: 500px;}
-#container .main4 .center .bot img {width: 550px;}
+#container .main4 .center .top .topshow {width: 500px; opacity: 0; transition: all 3s;}
+#container .main4 .center .top .topshow.on {opacity: 1;}
+
+#container .main4 .center .bot .botshow {width: 550px; opacity: 0; transition: all 3.5s;}
+#container .main4 .center .bot .botshow.on {opacity: 1;}
+
 #container .main4 .center .bot .title {margin-top: 80px; margin-left: 50px;}
-#container .main4 .center .bot .title h3 {font-size: 36px;font-family: 'Lora', serif; font-weight: 300; margin-bottom: 50px;}
+#container .main4 .center .bot .title h3 {font-size: 36px;font-family: 'Lora', serif; font-weight: 300; margin-bottom: 50px; height: 36px;}
 #container .main4 .center .bot .title p {line-height: 28px; margin-left: 55px; font-size: 14px; margin-bottom: 130px;}
 
 
 #container .main4 .center .top .title {margin-top: 80px; margin-right: 55px; text-align: end;}
-#container .main4 .center .top .title h3 {font-size: 36px; font-family: 'Lora', serif; font-weight: 300; margin-bottom: 50px;}
+#container .main4 .center .top .title h3 {font-size: 36px; font-family: 'Lora', serif; font-weight: 300; margin-bottom: 50px; height: 36px;}
 #container .main4 .center .top .title p {line-height: 28px;  font-size: 14px;}
 
 /*main5*/

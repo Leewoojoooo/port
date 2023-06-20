@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/subpants.css">
+</head>
+<body>
+    <div id="bg">
+        <div>나만의 데일리룩을 지금 완성해보세요.</div>
+    </div>
+    <%- include("subheader.ejs", {title:"sub",subFiles:["subheader.css"]}) %>
+    <div id="container" style="margin-top: 150px;" >
+        <div class="sub1">
+            <div class="center">
+                <div class="title">
+                    <h3>여성 팬츠</h3>
+                    <p>Zara의 여성 팬츠 온라인 컬렉션을 소개합니다.<br> 큐롯 팬츠부터 와이드 팬츠, 카고 팬츠, 페이퍼백 웨이스트 스타일까지,
+                         일상의 모든 순간을 함께 할 트렌드와 스타일을 확인해보세요. <br>
+                         클래식한 타임리스 데님 진과 오피스룩을 책임질 헤리티지 체크 팬츠와 테일러드 블랙 팬츠를 지금 쇼핑해보세요.</p>
+                </div>
+            </div>
+        </div>
+        <div class="sub2">
+            <div class="center">
+
+            </div>
+        </div>
+        <div class="sub3">
+            <div class="center">
+                <div class="womanlist"></div>
+            </div>
+        </div>
+        <div class="sub4">
+            <div class="center">
+                <!-- <div class="img">
+                    <img src="/img/woman/sub3_list11.jpg">
+                </div> -->
+                <div class="bot">
+                    <div class="title">
+                        <p class="hig">여성 팬츠</p>
+                        <h4 class="zara">ZARA</h4>
+                        <p class="text">다시 돌아온 패션 아이템, 여성 쇼츠를 다양한 스타일로 즐겨보세요. <br>
+                             이번 시즌 데님 쇼츠, 코디 아이템, 버뮤다 팬츠, 사이클링 쇼츠,스마트 테일러링 스타일을 Zara 온라인 컬렉션에서 확인해보세요.</p>
+                        <a href="#">감상하기</a>
+                    </div>
+                    <div>
+                        <img src="/img/woman/woman_pants/bg.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs", {title:"footer",footerFile:["footer.css"]}) %>
+    <script src="/js/subpants.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+</html>

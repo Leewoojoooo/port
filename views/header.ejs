@@ -9,13 +9,17 @@
         <div class="center">
             <h1 class="logo"><a href="#"><img src="/img/Zara_logo.png"></a></h1>
             <ul class="gnb">
-                <li><a href="/sub">WOMAN</a></li>
-                <li><a href="#">MAN</a></li>
+                <li><a href="/subwoman">WOMAN</a></li>
+                <li><a href="/subman">MAN</a></li>
                 <li><a href="#">KIDS</a></li>
                 <li><a href="#">BEAUTY</a></li>
                 <li><a href="#">ZARA SRPLS</a></li>
-                <li><a href="#">LOGIN</a></li>
-                <li><a href="#">SERCH</a></li>
+                <% if(login) {%>
+                    <li><a href="/mypage">MY PAGE</a></li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                <% } else {%>
+                    <li><a href="/login">LOGIN</a></li>
+                <% } %>
             </ul>
         </div>
     </div>

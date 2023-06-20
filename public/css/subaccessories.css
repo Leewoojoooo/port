@@ -1,0 +1,61 @@
+* {margin: 0; padding: 0;}
+img {vertical-align: top;}
+li,ul,ol {list-style: none;}
+a {text-decoration: none;}
+body {line-height: 1;}
+
+
+
+/* #header {padding: 60px 0; width: 100%; position: fixed;z-index: 99;}
+#header .center .logo {margin-bottom: 40px;  position: fixed; top: 40px; left: 33px; opacity: 1;}
+#header .center .woman {font-size: 32px; margin-bottom: 30px; font-family: 'Lora', serif; font-weight: 200; text-align: center;color: #000;}
+#header.on .center .woman {color: #fff;}
+#header .center img {width: 320px;}
+#header .center .gnb {display: flex; justify-content: center;}
+#header .center .menu {display: flex; position: absolute; top: 0; right: 0;}
+#header .center .gnb > li {margin: 0 15px;}
+#header .center .gnb > li > a {color: #000; font-family: 'Lora', serif; font-weight: 200; font-size: 18px;}
+#header.on .center .gnb > li > a {color: #fff;}
+#header .center .gnb > li > a:hover {text-decoration: underline; transition: all 0.5s;} */
+
+#bg {background-color: #ffa048; padding: 20px 0; text-align: center;}
+#bg > div {color: #fff; font-size: 13px;}
+#container .sub1 {display: flex; justify-content: center;}
+#container .sub1 .center {width: 1500px; text-align: center;}
+#container .sub1 .center img {width: 600px; margin-bottom: 200px;}
+
+
+
+#container .sub3 {display: flex; justify-content: center;}
+#container .sub3 .center {width: 1700px;}
+#container .sub3 .center .womanlist {display: flex; justify-content: space-between; flex-wrap: wrap;}
+#container .sub3 .center .womanlist .list img {width: 500px;}
+#container .sub3 .center .womanlist .list { margin-bottom: 250px;}
+#container .sub3 .center .womanlist .list .title {display: flex; justify-content: space-between;margin-top: 10px;}
+#container .sub3 .center .womanlist .list .title p {font-size: 14px;}
+#container .sub3 .center .img img {width: 100%;}
+
+
+#container .sub4 {display: flex; justify-content: center;}
+#container .sub4 .center {width: 1700px;}
+#container .sub4 .center .bot {display: flex;}
+#container .sub4 .center .bot > div {width: 50%;}
+#container .sub4 .center .bot > div > img {width: 100%;}
+#container .sub4 .center .bot  .title {text-align: center; margin: auto 0; line-height: 28px;}
+#container .sub4 .center .bot  .title .hig {font-size: 12px; color: gray;}
+#container .sub4 .center .bot  .title .zara {font-family: 'Lora', serif; font-weight: 600; font-size: 18px;}
+#container .sub4 .center .bot  .title .text {font-size: 13px;}
+#container .sub4 .center .bot  .title a {color: #000; text-decoration:underline;}
+#container .sub4 .center .bot  .title a:hover {color: gray; }
+
+
+
+/* footer
+#footer {display: flex; justify-content: center; text-align: center; background-color: #fff; padding: 100px 0;}
+#footer .center {width: 1500px;}
+#footer .center .title {line-height: 28px; color: gray; font-size: 14px;}
+#footer .center .title .sing { margin-bottom: 30px;}
+#footer .center .title .tik {font-size: 15px; margin-bottom: 30px; font-weight: bold;}
+#footer .center .title .company {font-size: 15px; margin-bottom: 30px;}
+#footer .center .title .fix {position: fixed; bottom:200px; right: 200px; color: #000; opacity: 0; transform: translateY(50px); transition: all 0.5s; pointer-events: all;}
+#footer .center .title .fix.on {position: fixed; bottom:200px; right: 200px; color: #000; opacity: 1; transform: translateY(0px);} */

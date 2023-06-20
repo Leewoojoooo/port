@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div class="title">
+                <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+            </div>
+            <div class="list">
+                <div class="won">
+                    <p>고객님의 계정에 액세스하세요</p>
+                </div>
+                <div class="two">
+                    <p>계정이 필요하신가요?</p>
+                    <a class="join" href="/join">등록</a>
+                </div>
+            </div>
+        </div>
+        <div class="center2">
+            <div class="title2">
+                <form id="login_form" action="/logincheck" method="post">
+                    <div><input type="text" class="text" name="memberid" placeholder="이메일"></div>
+                    <div><input type="password" class="password" name="memberpass" placeholder="비밀번호"></div>
+                    <div><button type="submit" class="btn">로그인</button></div>
+            
+                    <% if (typeof message !== 'undefined' && message) { %>
+                        <script>
+                            alert('<%= message %>');
+                        </script>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

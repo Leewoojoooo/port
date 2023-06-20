@@ -1,0 +1,16 @@
+/* header */
+#header .center .title  { margin-top: 75px; margin-left: 26px; opacity: 1;}
+#header .center img {width: 320px; margin-bottom: 10px;}
+#header .center .list {font-size: 18px; margin-left: 26px; display: flex;}
+#header .center .list .won { margin-right: 400px; margin-bottom: 50px;}
+#header .center .list .two a {font-size: 16px; display: inline-block; background-color: #fff; color:#000; border: 1px solid #000; width: 500px; height: 50px; text-align: center; line-height: 50px; text-decoration: none;}
+
+
+#header .center2 {display: flex; width: 700px; justify-content: space-between;}
+#header .center2 .title2 {margin-left: 26px; font-size: 16px;}
+#header .center2 .title2 p {font-size: 13px; margin-bottom: 20px;}
+#header .center2 .title2 .text {width: 500px; height: 50px; border: none; border-bottom: 1px solid gray; margin-bottom: 15px; }
+#header .center2 .title2 .password {width: 500px; height: 50px; border: none;  border-bottom: 1px solid gray; margin-bottom: 15px;}
+#header .center2 .title2 button {border: none; background-color: black; color:#fff; width: 500px; height: 50px; text-align: center; font-size: 16px; margin-top: 30px;}
+#header .center2 .title2 .flex {display: flex;}
+#header .center2 .title2 a { margin-left: 30px; display: block; border: none; background-color: black; color:#fff; width: 500px; height: 50px; text-align: center; font-size: 16px; line-height: 50px; text-decoration: none; margin-top: 30px;}

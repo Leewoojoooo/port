@@ -10,9 +10,15 @@
             <ul class="gnb">
                 <li><a href="/sub">ALL</a></li>
                 <li><a href="/sub/top">TOP</a></li>
-                <li><a href="#">SHOES</a></li>
-                <li><a href="#">ACCESSORIES</a></li>
-                <li><a href="#">LOGIN</a></li>
+                <li><a href="/sub/pants">PANTS</a></li>
+                <li><a href="/sub/shoes">SHOES</a></li>
+                <li><a href="/sub/accessories">ACCESSORIES</a></li>
+                <% if(login) {%>
+                    <li><a href="/mypage">MY PAGE</a></li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                <% } else {%>
+                    <li><a href="/login">LOGIN</a></li>
+                <% } %>
                 <li><a href="#">SERCH</a></li>
             </ul>
         </div>

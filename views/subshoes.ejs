@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/subshoes.css">
+</head>
+<body>
+    <div id="bg">
+        <div>나만의 데일리룩을 지금 완성해보세요.</div>
+    </div>
+    <%- include("subheader.ejs", {title:"sub",subFiles:["subheader.css"]}) %>
+    <div id="container" style="margin-top: 150px;" >
+        <div class="sub1">
+            <div class="center">
+                <div class="title">
+                    <h3>스타일을 완성하는 여성 슈즈</h3>
+                    <p>Zara의 여성 슈즈 온라인 컬렉션에서 모든 아웃핏을 마무리할 완벽한 슈즈를 찾아보세요. 키튼 힐 뮬, 미니멀 스트랩 스틸레토, <br>
+                        스테이트먼트 플랫 슈즈와 이지 패션 스니커즈의 이번 시즌 스타일을 글로시 레더, 파티 메탈릭과 다채로운 장식으로 만나보세요.<br> 빈티지 실루엣부터 깔끔하고 그래픽적인 실루엣까지, 이번 시즌 트렌드를 여성 슈즈 에딧에서 발견해보세요.</p>
+                </div>
+            </div>
+        </div>
+        <div class="sub2">
+            <div class="center">
+
+            </div>
+        </div>
+        <div class="sub3">
+            <div class="center">
+                <div class="womanlist"></div>
+            </div>
+        </div>
+        <div class="sub4">
+            <div class="center">
+                <!-- <div class="img">
+                    <img src="/img/woman/sub3_list11.jpg">
+                </div> -->
+                <div class="bot">
+                    <div class="title">
+                        <p class="hig">다양한 여성 세트 상품</p>
+                        <h4 class="zara">ZARA</h4>
+                        <p class="text">이번 시즌 세트 상품보다 더 쉬운 코디 방법이 있을까요? 이번 시즌 포근한 니트웨어 세트부터<br> 프린트 탑과 스커트 세트 상품까지,
+                             모든 소재와 스타일의 세트 상품을 확인해보세요.<br> 쉬운 스타일링을 위해 세트 상품을 함께 코디하거나 다른 아이템과 매치해 색다른 스타일을 완성해보세요.</p>
+                        <a href="#">감상하기</a>
+                    </div>
+                    <div>
+                        <img src="/img/woman/woman_shoes/bg.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs", {title:"footer",footerFile:["footer.css"]}) %>
+    <script src="/js/subshoes.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+</html>

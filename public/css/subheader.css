@@ -1,7 +1,7 @@
 /* header */
 #header {padding: 60px 0; width: 100%; position: fixed; z-index: 99;}
-#header .center .logo {margin-bottom: 40px;  position: fixed; top: 40px; left: 33px; opacity: 1;}
-#header .center .woman {font-size: 32px; margin-bottom: 30px; font-family: 'Lora', serif; font-weight: 200; text-align: center;color: #000;}
+#header .center .logo {margin-bottom: 40px;  position: fixed; top: 75px; left: 33px; opacity: 1;}
+#header .center .woman {font-size: 32px; margin-bottom: 46px; font-family: 'Lora', serif; font-weight: 200; text-align: center;color: #000;}
 #header.on .center .woman {color: #fff;}
 #header .center img {width: 320px;}
 #header .center .gnb {display: flex; justify-content: center;}
