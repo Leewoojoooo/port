@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>묻고답하기 입력페이지 테스트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div class="center">
+            <div class="title">무엇을 도와드릴까요?</div>
+            <div class="content">
+                <form action="/dbinsert" method="post">
+                    <label for="title"><span>제목</span><input type="text" name="title" id="title"></label>
+                    <label for="content_upload">문의내역<textarea name="content" id="content_upload"></textarea></label>
+                    <label for="author"><span>작성자</span><input type="text" name="author" id="author"></label>
+                    <div class="btns">
+                        <button type="submit">등록</button>
+                        <a href="/sub4">취소</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

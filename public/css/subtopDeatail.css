@@ -1,0 +1,14 @@
+* {margin: 0; padding: 0;}
+img {vertical-align: top;}
+li,ul,ol {list-style: none;}
+a {text-decoration: none;}
+body {line-height: 1;}
+
+#header {padding: 60px 0; width: 100%; position: fixed; z-index: 99;}
+#header .center .logo {margin-bottom: 40px;  position: fixed; top: 75px; left: 33px; opacity: 1;}
+#header .center img {width: 320px;}
+
+#content {display: flex; justify-content: center;}
+#content .center {width: 1100px;}
+#content .center .list { display: flex; justify-content: space-between;}
+#content .center .list .imgs img { width: 500px;}

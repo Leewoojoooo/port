@@ -1,0 +1,19 @@
+* {margin: 0; padding: 0;}
+img {vertical-align: top;}
+li,ul,ol {list-style: none;}
+a {text-decoration: none;}
+body {line-height: 1;}
+
+
+#header .center .title  { margin-top: 75px; margin-left: 26px; opacity: 1;}
+#header .center .title p {font-size: 28px; margin: 60px 0;}
+#header .center img {width: 320px; margin-bottom: 10px;}
+#header .center .list {margin-left: 26px; font-size: 14px;}
+#header .center .list .won .gray {color: gray;}
+#header .center .list .font { margin: 6px 0;}
+#header .center .list .phone {margin-bottom: 15px; }
+#header .center .list .num {margin-bottom: 20px;}
+#header .center .list .facebook {margin-top:50px; margin-bottom: 15px;}
+#header .center .list .Care {margin-bottom: 15px;}
+#header .center .list .inquiry {margin-top:50px; margin-bottom: 15px;}
+#header .center .list .click {color: gray;}

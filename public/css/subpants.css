@@ -18,6 +18,7 @@ body {line-height: 1;}
 #header.on .center .gnb > li > a {color: #fff;}
 #header .center .gnb > li > a:hover {text-decoration: underline; transition: all 0.5s;} */
 
+#header .center .woman { margin-top: -50px;}
 #bg {background-color: #ffa048; padding: 20px 0; text-align: center;}
 #bg > div {color: #fff; font-size: 13px;}
 #container .sub1 {display: flex; justify-content: center;}

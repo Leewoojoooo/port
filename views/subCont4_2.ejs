@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터</title>
+    <link rel="stylesheet" href="css/inqulry.css">
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div class="title">
+                <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+                <p>어떻게 도와드릴까요?</p>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="center">
+            <div class="list">
+                <div class="topbox">
+                    <form id="searcForm" action="/search" method="get">
+                        <select name="search">
+                            <option value="title">제목</option>
+                            <option value="content">문의내역</option>
+                            <option value="author">작성자</option>
+                        </select>
+                        <input type="text" id="inputText" name="inputText" placeholder="검색어를 입력해주세요">
+                        <button id="searchBtn" type="submit">검색</button>
+                    </form>
+                </div>
+                <table class="won">
+                    <tr class="top">
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>문의내역</th>
+                        <th>작성자</th>
+                        <% if (data.length > 0) { %>
+                            <% for (let i = 0; i < data.length; i++) { %>
+                              <tr>
+                                <td><%- data[i].num %></td>
+                                <td><a href="/subCont4_2_detail/<%- data[i].num %>"><%- data[i].title %></a></td>
+                                <td><a href="/subCont4_2_detail/<%- data[i].num %>"><%- data[i].content %></a></td>
+                                <td><%- data[i].author %></td>
+                              </tr>
+                            <% } %>
+                          <% } else { %>
+                            <tr>
+                              <td colspan="4">검색 결과가 없습니다.</td>
+                            </tr>
+                          <% } %>
+                    </tr>
+                </table>
+                    <div class="bot">
+                        <div class="botbox">
+                            <a href="/sub4">목록으로</a>
+                            <a class="upload" href="/subCont4_2_insert">1:1문의하기</a>
+                        </div>
+                    </div>
+                    <div class="botbot">
+                        <ul class="flex">
+                            <!-- 1페이지로 이동하는 작업-->
+                            <% if(pageNumber <= 1){ %>
+                                <li>처음</li>
+                            <% } else { %>
+                                <!-- /boardtest?page=1 -->
+                                <li><a href="?page=1">처음</a></li>
+                            <% } %>
+                    
+                            <!-- 이전버튼 생성작업 페이지 시작번호가 그룹의 총갯수보다 크다면 이전버튼 생성-->
+                            <% if(blockStart > totalBlock){ %>
+                                <li><a href="?page=<%- blockStart - 1 %>">이전</a></li>
+                            <% } %> 
+                    
+                            <!-- 페이지 시작번호값 부터 끝번호까지 li태그 생성-->
+                            <% for(let i = blockStart; i <= blockEnd; i++ ) { %>
+                                <!-- 현재 보고있는 페이지 번호인 경우 색상 활성화-->
+                                <% if(pageNumber == i) { %>
+                                    <li class="highlight"><a href="?page=<%- i %>"><%- i %></a></li>
+                                <% } else { %>
+                                    <li><a href="?page=<%- i %>"><%- i %></a></li>
+                                <% } %>
+                            <% } %>
+                    
+                            <!-- 다음버튼 생성작업 -->
+                            <% if(blockNum < totalBlock) { %>
+                                <li><a href="?page=<%- blockEnd + 1 %>">다음</a></li>
+                            <% } %>
+                    
+                            <!-- 페이지 마지막 번호로 이동 -->
+                            <% if(pageNumber >= totalPaging) { %>
+                                <li>마지막</li>
+                            <% } else { %>
+                                <li><a href="?page=<%- totalPaging %>">마지막</a></li>
+                            <% } %>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs", {title:"footer",footerFile:["footer.css"]}) %>
+    <script>
+
+
+        const searchForm = document.querySelector("#searchForm"); //폼태그
+        const inputText = document.querySelector("#inputText"); //검색어 입력
+        const searchBtn = document.querySelector("#searchBtn");// 전송버튼
+
+        searchBtn.addEventListener("click",(event)=>{
+             let data = inputText.value; //검색어 입력값 data변수에 담음
+
+             let result = data.trim();
+
+             if(result === ""){
+                alert("검색어 입력하세요")
+                event.preventDefault();
+             }
+             else{
+                searchForm.submit();
+             }
+            
+        })
+    </script>
+</body>
+</html>

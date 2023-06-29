@@ -1,5 +1,6 @@
-/* header */
-#header {padding: 60px 0; width: 100%; position: fixed; z-index: 99;}
+
+/* #header {padding: 60px 0; width: 100%; position: fixed; z-index: 99;}
+#header.on { background-color: #fff; border-bottom: 1px solid #000;}
 #header .center .logo {margin-bottom: 40px;  position: fixed; top: 75px; left: 33px; opacity: 1;}
 #header .center .woman {font-size: 32px; margin-bottom: 46px; font-family: 'Lora', serif; font-weight: 200; text-align: center;color: #000;}
 #header.on .center .woman {color: #fff;}
@@ -9,4 +10,16 @@
 #header .center .gnb > li {margin: 0 15px;}
 #header .center .gnb > li > a {color: #000; font-family: 'Lora', serif; font-weight: 200; font-size: 18px;}
 #header.on .center .gnb > li > a {color: #fff;}
+#header .center .gnb > li > a:hover {text-decoration: underline; transition: all 0.5s;} */
+
+
+#header {padding: 60px 0; width: 100%; position: fixed; z-index: 99;}
+#header.on { background-color: #fff; border-bottom: 1px solid #000 }
+#header .center .logo {margin-bottom: 40px;  position: fixed; top: 75px; left: 33px; opacity: 1;}
+#header .center .woman {font-size: 32px; margin-bottom: 30px; font-family: 'Lora', serif; font-weight: 200; text-align: center;color: #000; margin-top: 50px;}
+#header .center img {width: 320px;}
+#header .center .gnb {display: flex; justify-content: center;}
+#header .center .menu {display: flex; position: absolute; top: 0; right: 0;}
+#header .center .gnb > li {margin: 0 15px;}
+#header .center .gnb > li > a {color: #000; font-family: 'Lora', serif; font-weight: 200; font-size: 18px;}
 #header .center .gnb > li > a:hover {text-decoration: underline; transition: all 0.5s;}

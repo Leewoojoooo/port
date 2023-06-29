@@ -167,9 +167,169 @@ passport.serializeUser(function (user, done) {
         }
     })
 
+    const subtop = [
+        {
+            title: "세미 시스루 홀터넥 탑",
+            price: "49,900 원",
+            img:"../img/woman/sub3_list1.jpg",
+            content:"목 부분에 뒷면 버튼이 달린 홀터넥 탑. 가느다란 벨트."
+        },
+        {
+            title: "크롭트 봄버 재킷",
+            price: "89,900 원",
+            img:"../img/woman/sub3_list3.jpg",
+            content:"커프스 마감 긴소매 라운드넥 봄버 재킷. 앞면 더블 파이핑 포켓. 앞면 메탈 스냅 버튼으로 여밈."
+        },
+        {
+            title: "암 워머 콤비 크롭탑",
+            price: "49,900 원",
+            img:"../img/woman/sub3_list5.jpg",
+            content:"목 부분에 뒷면 버튼이 달린 홀터넥 탑. 가느다란 벨트."
+        },
+        {
+            title: "실버 크롭 점퍼",
+            price: "59,900 원",
+            img:"../img/woman/sub3_list7.jpg",
+            content:"목 부분에 뒷면 버튼이 달린 홀터넥 탑. 가느다란 벨트."
+        },
+        {
+            title: "체인 새틴 원피스",
+            price: "79,900 원",
+            img:"../img/woman/sub3_list9.jpg",
+            content:"체인 아플리케 장식 가느다란 어깨끈이 달린 스트레이트 네크라인 미디 원피스. 옆면 셔링 디테일. 앞면 하단 트임. 뒷면 심라인 콘실 지퍼 여밈."
+        }
+    ];
+    
+
+    app.get('/subtopDetail/:num', (req, res) => {
+        res.render("subtopDeatail.ejs", { data: subtop[Number(req.params.num)] });
+    });
+
+
+    app.get("/sub4", (req, res) => {
+        db.collection("board").find().toArray((err, result) => {
+          let totalData = result.length;
+          let perPage = 10;
+          let totalPaging = Math.ceil(totalData / perPage);
+          let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page)
+          let blockCount = 5;
+          let blockNum = Math.ceil(pageNumber / blockCount);
+          let blockStart = ((blockNum-1) * blockCount) + 1;
+          let blockEnd = blockStart + blockCount -1;
+      
+          if(blockEnd > totalPaging){
+            blockEnd = totalPaging;
+          }
+          let totalBlock = Math.ceil(totalPaging / blockCount)
+          let startFrom = (pageNumber - 1) * perPage
+      
+          db.collection("board").find().sort({num:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{
+                  
+            if(req.query.page === "" || req.query.page > totalPaging){
+                res.send("잘못된 페이지 접근입니다.")
+            }
+            else{
+              res.render("subCont4_2.ejs", {
+                totalData: totalData,
+                data: result,
+                totalPaging: totalPaging,
+                blockStart: blockStart,
+                blockEnd: blockEnd,
+                blockNum: blockNum,
+                totalBlock: totalBlock,
+                pageNumber: pageNumber,
+                login:req.user
+              });
+            }
+          })
+        })
+      });
+      
+      // 질답페이지 게시글 클릭했을때 나오는 디테일 페이지
+      app.get("/subCont4_2_detail/:num",(req,res)=>{
+        db.collection("board").findOne(
+          {num:Number(req.params.num)},
+          (err,result)=>{
+          res.render("subCont4_2_detail.ejs",{data:result,login:req.user})
+        })
+      })
+      
+      // 질답 검색
+      app.get("/search", (req, res) => {
+        let check = [
+          {
+              $search:{
+                  //db사이트에서 검색엔진 설정한 이름값
+                  index:"searchTest",
+                  text:
+                      //검색어 입력단어값
+                      {query:req.query.inputText,
+                      //어떤항목을 검색할것인지 -> 여러개 설정할 때는 배열로 [] 설정가능 
+                      path:req.query.search,
+                      }
+              }
+          },
+          {$sort:{num:-1}},
+          // {$limit:2}
+      ]
+        db.collection("board").aggregate(check).toArray((err, result) => {
+          let totalData = result.length;
+          let perPage = 10;
+          let totalPaging = Math.ceil(totalData / perPage);
+          let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page)
+          let blockCount = 5;
+          let blockNum = Math.ceil(pageNumber / blockCount);
+          let blockStart = ((blockNum-1) * blockCount) + 1;
+          let blockEnd = blockStart + blockCount -1;
+      
+          if(blockEnd > totalPaging){
+            blockEnd = totalPaging;
+          }
+          let totalBlock = Math.ceil(totalPaging / blockCount)
+      
+          if(req.query.page === "" || req.query.page > totalPaging){
+            res.send("잘못된 페이지 접근입니다.")
+          }
+          else{
+            res.render("subCont4_2.ejs", {
+              totalData: totalData,
+              data: result,
+              totalPaging: totalPaging,
+              blockStart: blockStart,
+              blockEnd: blockEnd,
+              blockNum: blockNum,
+              totalBlock: totalBlock,
+              pageNumber: pageNumber,
+              login:req.user
+            });
+          }
+        });
+      });
+      
+      
+      // 질답페이지 게시글 작성
+      app.get("/subCont4_2_insert",(req,res)=>{
+        res.render("subCont4_2_insert.ejs",{login:req.user})
+      })
+      app.post("/dbinsert",(req,res)=>{
+        db.collection("count").findOne({name:"게시물"},(err,countresult)=>{
+            db.collection("board").insertOne({
+              num:countresult.brdCount,
+              title:req.body.title,
+              content:req.body.content,
+              author:req.body.author,
+            },(err,result)=>{
+              db.collection("count").updateOne({name:"게시물"},{$inc:{brdCount:1}},(err,result)=>{
+                res.redirect("/subCont4_2_detail/"+countresult.brdCount)
+              })
+            })
+         })
+      })
+
 
 
 //라우터 세팅
+
 app.get("/subwoman",(req,res)=>{
     res.render("sub.ejs",{login:req.user})
 })
@@ -193,3 +353,11 @@ app.get("/sub/accessories",(req,res)=>{
 app.get("/subman",(req,res)=>{
     res.render("subman.ejs",{login:req.user})
 })
+
+app.get("/subinquiry",(req,res)=>{
+    res.render("subclick.ejs",{login:req.user})
+})
+
+// app.get("/sub4",(req,res)=>{
+//     res.render("subCont4_2.ejs",{login:req.user})
+// })

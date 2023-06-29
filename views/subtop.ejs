@@ -12,9 +12,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="bg">
-        <div>나만의 데일리룩을 지금 완성해보세요.</div>
-    </div>
     <%- include("subheader.ejs", {title:"sub",subFiles:["subheader.css"]}) %>
     <div class="videobox">
         <video muted autoplay loop>
@@ -34,7 +31,10 @@
         </div>
         <div class="sub3">
             <div class="center">
-                <div class="womanlist"></div>
+                <!-- subtop.js 파일에 있는 데이터를 기반으로 목록-->
+                <div class="womanlist">
+                    
+                </div>
             </div>
         </div>
         <div class="sub4">

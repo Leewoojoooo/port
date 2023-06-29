@@ -2,17 +2,20 @@
 const header = document.querySelector("#header");
 const sub = document.querySelectorAll("#container > div");
 
-window.onscroll = function() {
-  let scTop = window.scrollY;
 
-  // 스크롤 위치가 0보다 크고 sub[1]에 도달하기 전까지 header에 "on" 클래스를 추가
-  if (scTop > 0 && scTop < sub[1].offsetTop) {
+
+window.addEventListener("scroll",()=>{
+  let scTop = window.scrollY;
+  // 스크롤 위치가 0보다 크고 sub[0]에 도달하기 전까지 header에 "on" 클래스를 추가
+  if (scTop > 0) {
     header.classList.add("on");
+    
   } else {
-     // 그 외의 경우에는 "on" 클래스를 제거
+    // 그 외의 경우에는 "on" 클래스를 제거
     header.classList.remove("on");
   }
-};
+})
+  
 
 
 
@@ -194,7 +197,6 @@ const moreBtn = document.querySelector(".more1");
 const moreBtn2 = document.querySelector(".more2");
 const box = document.querySelectorAll(".sub2_3 .center .best > div");
 
-console.log(window.scrollY);
 
 let start = 4;
 let start2 = 4;
