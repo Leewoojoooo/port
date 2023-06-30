@@ -40,8 +40,8 @@
                             <% for (let i = 0; i < data.length; i++) { %>
                               <tr>
                                 <td><%- data[i].num %></td>
-                                <td><a href="/subCont4_2_detail/<%- data[i].num %>"><%- data[i].title %></a></td>
-                                <td><a href="/subCont4_2_detail/<%- data[i].num %>"><%- data[i].content %></a></td>
+                                <td><a href="/list_detail/<%- data[i].num %>"><%- data[i].title %></a></td>
+                                <td><a href="/list_detail/<%- data[i].num %>"><%- data[i].content %></a></td>
                                 <td><%- data[i].author %></td>
                               </tr>
                             <% } %>
@@ -55,7 +55,7 @@
                     <div class="bot">
                         <div class="botbox">
                             <a href="/sub4">목록으로</a>
-                            <a class="upload" href="/subCont4_2_insert">1:1문의하기</a>
+                            <a class="upload" href="/list_insert">1:1문의하기</a>
                         </div>
                     </div>
                     <div class="botbot">

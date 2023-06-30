@@ -1,0 +1,31 @@
+#header .center .title  { margin-top: 75px; margin-left: 26px; opacity: 1;}
+#header .center .title p {font-size: 28px; margin: 40px 0; font-weight: lighter;}
+#header .center img {width: 320px; margin-bottom: 10px;}
+
+#container {display: flex; justify-content: center;}
+#container .center {width: 900px; display: flex; justify-content: center;}
+#container .center .content {background-color: #fff;padding: 40px;border-radius: 5px;}
+#container .center .content .flex {display: flex; margin-bottom: 20px; justify-content: space-between;}
+#container .center .content .flex .title { margin-right: 20px;border: 1px solid #999;}
+#container .center .content .flex .author { margin-right: 20px;border: 1px solid #999;}
+label span {font-weight: bold; margin-right: 8px;}
+.contentdiv {width: 370px;}
+.contentup {width: 100%;padding: 50px; border: 1px solid #999; margin-top: 5px;}
+
+.btns { margin-top: 20px;}
+
+.btns .button {display: inline-block;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px;background-color: #333; color: #fff;font-weight: lighter; font-size: 14px;}
+
+.btns .close {display: inline-block;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 10px; background-color: #333; color: #fff;font-weight: lighter; font-size: 14px;}

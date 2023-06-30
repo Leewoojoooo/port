@@ -207,126 +207,134 @@ passport.serializeUser(function (user, done) {
 
 
     app.get("/sub4", (req, res) => {
+        // "board" 컬렉션의 데이터를 조회하여 배열로 반환합니다.
         db.collection("board").find().toArray((err, result) => {
-          let totalData = result.length;
-          let perPage = 10;
-          let totalPaging = Math.ceil(totalData / perPage);
-          let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page)
-          let blockCount = 5;
-          let blockNum = Math.ceil(pageNumber / blockCount);
-          let blockStart = ((blockNum-1) * blockCount) + 1;
-          let blockEnd = blockStart + blockCount -1;
-      
-          if(blockEnd > totalPaging){
-            blockEnd = totalPaging;
-          }
-          let totalBlock = Math.ceil(totalPaging / blockCount)
-          let startFrom = (pageNumber - 1) * perPage
-      
-          db.collection("board").find().sort({num:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{
-                  
-            if(req.query.page === "" || req.query.page > totalPaging){
-                res.send("잘못된 페이지 접근입니다.")
+            let totalData = result.length; // 전체 데이터 개수
+            let perPage = 10; // 페이지당 표시할 데이터 개수
+            let totalPaging = Math.ceil(totalData / perPage); // 전체 페이지 개수
+            let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page); // 현재 페이지 번호 (URL 쿼리 파라미터로부터 가져옴)
+            let blockCount = 5; // 한 블록에 표시할 페이지 개수
+            let blockNum = Math.ceil(pageNumber / blockCount); // 현재 블록 번호
+            let blockStart = ((blockNum - 1) * blockCount) + 1; // 현재 블록의 시작 페이지 번호
+            let blockEnd = blockStart + blockCount - 1; // 현재 블록의 끝 페이지 번호
+    
+            if (blockEnd > totalPaging) {
+                blockEnd = totalPaging;
             }
-            else{
-              res.render("subCont4_2.ejs", {
-                totalData: totalData,
-                data: result,
-                totalPaging: totalPaging,
-                blockStart: blockStart,
-                blockEnd: blockEnd,
-                blockNum: blockNum,
-                totalBlock: totalBlock,
-                pageNumber: pageNumber,
-                login:req.user
-              });
-            }
-          })
-        })
-      });
-      
-      // 질답페이지 게시글 클릭했을때 나오는 디테일 페이지
-      app.get("/subCont4_2_detail/:num",(req,res)=>{
-        db.collection("board").findOne(
-          {num:Number(req.params.num)},
-          (err,result)=>{
-          res.render("subCont4_2_detail.ejs",{data:result,login:req.user})
-        })
-      })
-      
-      // 질답 검색
-      app.get("/search", (req, res) => {
-        let check = [
-          {
-              $search:{
-                  //db사이트에서 검색엔진 설정한 이름값
-                  index:"searchTest",
-                  text:
-                      //검색어 입력단어값
-                      {query:req.query.inputText,
-                      //어떤항목을 검색할것인지 -> 여러개 설정할 때는 배열로 [] 설정가능 
-                      path:req.query.search,
-                      }
-              }
-          },
-          {$sort:{num:-1}},
-          // {$limit:2}
-      ]
-        db.collection("board").aggregate(check).toArray((err, result) => {
-          let totalData = result.length;
-          let perPage = 10;
-          let totalPaging = Math.ceil(totalData / perPage);
-          let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page)
-          let blockCount = 5;
-          let blockNum = Math.ceil(pageNumber / blockCount);
-          let blockStart = ((blockNum-1) * blockCount) + 1;
-          let blockEnd = blockStart + blockCount -1;
-      
-          if(blockEnd > totalPaging){
-            blockEnd = totalPaging;
-          }
-          let totalBlock = Math.ceil(totalPaging / blockCount)
-      
-          if(req.query.page === "" || req.query.page > totalPaging){
-            res.send("잘못된 페이지 접근입니다.")
-          }
-          else{
-            res.render("subCont4_2.ejs", {
-              totalData: totalData,
-              data: result,
-              totalPaging: totalPaging,
-              blockStart: blockStart,
-              blockEnd: blockEnd,
-              blockNum: blockNum,
-              totalBlock: totalBlock,
-              pageNumber: pageNumber,
-              login:req.user
-            });
-          }
-        });
-      });
-      
-      
-      // 질답페이지 게시글 작성
-      app.get("/subCont4_2_insert",(req,res)=>{
-        res.render("subCont4_2_insert.ejs",{login:req.user})
-      })
-      app.post("/dbinsert",(req,res)=>{
-        db.collection("count").findOne({name:"게시물"},(err,countresult)=>{
-            db.collection("board").insertOne({
-              num:countresult.brdCount,
-              title:req.body.title,
-              content:req.body.content,
-              author:req.body.author,
-            },(err,result)=>{
-              db.collection("count").updateOne({name:"게시물"},{$inc:{brdCount:1}},(err,result)=>{
-                res.redirect("/subCont4_2_detail/"+countresult.brdCount)
-              })
+            let totalBlock = Math.ceil(totalPaging / blockCount); // 전체 블록 개수
+            let startFrom = (pageNumber - 1) * perPage; // 데이터 조회를 시작할 인덱스
+    
+            // 페이징 처리된 데이터를 조회합니다.
+            db.collection("board").find().sort({ num: -1 }).skip(startFrom).limit(perPage).toArray((err, result) => {
+    
+                if (req.query.page === "" || req.query.page > totalPaging) {
+                    // 잘못된 페이지에 접근했을 경우 에러 메시지
+                    res.send("잘못된 페이지 접근입니다.");
+                } else {
+
+                    res.render("list.ejs", {
+                        totalData: totalData,
+                        data: result,
+                        totalPaging: totalPaging,
+                        blockStart: blockStart,
+                        blockEnd: blockEnd,
+                        blockNum: blockNum,
+                        totalBlock: totalBlock,
+                        pageNumber: pageNumber,
+                        login: req.user
+                    });
+                }
             })
-         })
-      })
-
-
+        })
+    });
+    
+    //  디테일 페이지
+    app.get("/list_detail/:num", (req, res) => {
+        // 주어진 게시글 번호(num)에 해당하는 데이터를 조회하여 디테일 페이지
+        db.collection("board").findOne(
+            { num: Number(req.params.num) },
+            (err, result) => {
+                res.render("list_detail.ejs", { data: result, login: req.user });
+            }
+        );
+    });
+    
+    //검색
+    app.get("/search", (req, res) => {
+        let check = [
+            {
+                $search: {
+                    // 검색엔진 설정한 이름값
+                    index: "searchTest",
+                    text: {
+                        // 검색어 입력단어값
+                        query: req.query.inputText,
+                        // 어떤 항목을 검색할 것인지 -> 여러 개 설정할 때는 배열로 [] 설정 가능
+                        path: req.query.search,
+                    }
+                }
+            },
+            { $sort: { num: -1 } },
+        ];
+    
+        // 검색 결과를 정렬하고, 페이징 처리하여 조회합니다.
+        db.collection("board").aggregate(check).toArray((err, result) => {
+            let totalData = result.length; // 전체 데이터 개수
+            let perPage = 10; // 페이지당 표시할 데이터 개수
+            let totalPaging = Math.ceil(totalData / perPage); // 전체 페이지 개수
+            let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page); // 현재 페이지 번호 (URL 쿼리 파라미터로부터 가져옴)
+            let blockCount = 5; // 한 블록에 표시할 페이지 개수
+            let blockNum = Math.ceil(pageNumber / blockCount); // 현재 블록 번호
+            let blockStart = ((blockNum - 1) * blockCount) + 1; // 현재 블록의 시작 페이지 번호
+            let blockEnd = blockStart + blockCount - 1; // 현재 블록의 끝 페이지 번호
+    
+            if (blockEnd > totalPaging) {
+                blockEnd = totalPaging;
+            }
+            let totalBlock = Math.ceil(totalPaging / blockCount); // 전체 블록 개수
+    
+            if (req.query.page === "" || req.query.page > totalPaging) {
+                // 잘못된 페이지에 접근했을 경우 에러 메시지를 반환합니다.
+                res.send("잘못된 페이지 접근입니다.");
+            } else {
+                // 조회된 데이터와 페이징 정보를 템플릿 엔진을 사용하여 렌더링합니다.
+                res.render("list.ejs", {
+                    totalData: totalData,
+                    data: result,
+                    totalPaging: totalPaging,
+                    blockStart: blockStart,
+                    blockEnd: blockEnd,
+                    blockNum: blockNum,
+                    totalBlock: totalBlock,
+                    pageNumber: pageNumber,
+                    login: req.user
+                });
+            }
+        });
+    });
+    
+    //게시글 작성
+    app.get("/list_insert", (req, res) => {
+        res.render("list_insert.ejs", { login: req.user });
+    });
+    
+    app.post("/dbinsert", (req, res) => {
+        // "count" 컬렉션에서 "게시물" 문서를 조회하여 게시글 번호(brdCount)를 가져옵니다.
+        db.collection("count").findOne({ name: "게시물" }, (err, countresult) => {
+            // "board" 컬렉션에 새로운 게시글 데이터를 추가합니다.
+            db.collection("board").insertOne({
+                num: countresult.brdCount,
+                title: req.body.title,
+                content: req.body.content,
+                author: req.body.author,
+            }, (err, result) => {
+                // "count" 컬렉션의 "게시물" 문서의 brdCount 값을 1 증가시킵니다.
+                db.collection("count").updateOne({ name: "게시물" }, { $inc: { brdCount: 1 } }, (err, result) => {
+                    res.redirect("/list_detail/" + countresult.brdCount);
+                });
+            });
+        });
+    });
 
 //라우터 세팅
 

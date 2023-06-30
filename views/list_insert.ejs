@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어떻게 도와드릴까요?</title>
+    <link rel="stylesheet" href="css/inqulry_2.css">
+
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div class="title">
+                <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+                <p>어떻게 도와드릴까요?</p>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="center">
+            <div class="content">
+                <form action="/dbinsert" method="post">
+                    <div class="flex">
+                        <div><label for="title"><span>제목</span><input type="text" name="title" id="title" class="title"></label></div>
+                        <div><label for="author"><span>작성자</span><input type="text" name="author" id="author" class="author"></label></div>
+                    </div>
+                    <div class="contentdiv"><label for="content_upload">문의내역<textarea class="contentup" name="content" id="content_upload"></textarea></label></div>
+                    <div class="btns">
+                        <button class="button" type="submit">등록</button>
+                        <a class="close" href="/sub4">취소</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs", {title:"footer",footerFile:["footer.css"]}) %>
+</body>
+</html>
