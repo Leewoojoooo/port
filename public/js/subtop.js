@@ -69,15 +69,16 @@ let list = "";
 
 womanList.forEach(function(ele){
     list += `<div class="list">
-                <img src="${ele.img}">
+                <img src="${ele.img}" onclick="window.location.href='${ele.link}'">
                 <div class="title">
                     <p>${ele.title}</p>
                     <p>${ele.price}</p>
                 </div>
-                <a href="${ele.link}">상세화면으로</a>
             </div>`
 });
 
 document.querySelector(".sub3 .center .womanlist").innerHTML = list;
+
+
 
 

@@ -5,10 +5,25 @@ a {text-decoration: none;}
 body {line-height: 1;}
 
 #header {padding: 60px 0; width: 100%; position: fixed; z-index: 99;}
+#header .center {width: 1100px;display: flex; justify-content: space-between;}
 #header .center .logo {margin-bottom: 40px;  position: fixed; top: 75px; left: 33px; opacity: 1;}
 #header .center img {width: 320px;}
+#header .center .gnb {display: flex; position: absolute; top: 0; right: 33px;}
+#header .center .gnb li a {margin: 0 20px; font-family: 'Lora', serif; font-weight: 200; color: #000; font-size: 17px;}
 
 #content {display: flex; justify-content: center;}
-#content .center {width: 1100px;}
+#content .center {width: 1000px;}
 #content .center .list { display: flex; justify-content: space-between;}
 #content .center .list .imgs img { width: 500px;}
+
+#content .center .list .item_detail {margin-top: 150px; width: 341px;}
+#content .center .list .item_detail .item_detail_tit p {font-size: 16px; margin-bottom: 5px;}
+#content .center .list .item_detail .item_detail_price p {font-size: 16px;}
+#content .center .list .item_detail .item_detail_content p {font-size: 14px; margin: 30px 0; width: 341px; line-height: 24px;}
+#content .center .list .item_detail .item_detail_content2 p {font-size: 13px; margin: 30px 0;}
+#content .center .list .item_detail .item_detail_size{line-height: 40px; margin-bottom: 30px; border-top: 1px solid #000; border-bottom: 1px solid #000; font-weight: bold;}
+.item_detail_size p.hide {display: none;}
+#content .center .list .item_detail .item_detail_sizetext{display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 30px;}
+#content .center .list .item_detail .shop a{width: 339px; border: 1px solid #000; display: inline-block; height: 40px; text-align: center; line-height: 40px; color: #000000; margin-bottom: 20px;}
+#content .center .list .item_detail .shop p {line-height: 28px;}
+.ahrfhr{ margin-top: 70px;}

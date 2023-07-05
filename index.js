@@ -172,7 +172,8 @@ passport.serializeUser(function (user, done) {
             title: "세미 시스루 홀터넥 탑",
             price: "49,900 원",
             img:"../img/woman/sub3_list1.jpg",
-            content:"목 부분에 뒷면 버튼이 달린 홀터넥 탑. 가느다란 벨트."
+            content:"목 부분에 뒷면 버튼이 달린 홀터넥 탑. 가느다란 벨트.",
+            content2:"CodeCode"
         },
         {
             title: "크롭트 봄버 재킷",
@@ -202,7 +203,7 @@ passport.serializeUser(function (user, done) {
     
 
     app.get('/subtopDetail/:num', (req, res) => {
-        res.render("subtopDeatail.ejs", { data: subtop[Number(req.params.num)] });
+        res.render("subtopDeatail.ejs", { data: subtop[Number(req.params.num)],login: req.user });
     });
 
 
