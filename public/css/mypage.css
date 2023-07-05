@@ -10,3 +10,12 @@ body {line-height: 1;}
 #header .center .ul ul {margin-left: 26px; display: flex;}
 #header .center .ul ul li {margin-right: 50px; margin-top: 100px; }
 #header .center .ul ul li a {color: #000;}
+
+.login {margin-left: 26px;}
+.login .memberid {margin-top: 80px;}
+.login .won {margin-top: 60px;}
+.login .two {margin-top: 60px;}
+.login .id {font-size: 12px; margin-top: 10px; color: gray;}
+.login .memberpassword {font-size: 12px; margin-top: 10px; color: gray;}
+.login .password {margin-top: 60px; color: #000;}
+.login .password a {color: #000;}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/mypagepass.css">
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div class="title">
+                <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+            </div>
+        </div>
+    </div>
+    <div class="pass">
+        <p>비밀번호 변경</p>
+        <form action="/myupdate" method="post">
+            <div><input type="password" name="originPass" placeholder="현재 비밀번호"></div>
+            <div><input type="password" name="changePass" placeholder="새 비밀번호"></div>
+            <button type="submit">회원정보 수정</button>
+        </form>
+    </div>
+</body>
+</html>

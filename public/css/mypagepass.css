@@ -1,0 +1,7 @@
+#header .center .title  { margin-top: 75px; margin-left: 26px; opacity: 1;}
+#header .center img {width: 320px; margin-bottom: 10px;}
+
+.pass {margin-left: 26px;}
+.pass p {font-size: 22px; font-weight: lighter; margin-top: 40px; margin-bottom: 60px;}
+input {border: none; border-bottom: 1px solid #ccc; width: 400px; height: 50px;}
+button {margin-top: 60px; border: none; width: 400px; height: 50px;  border: 1px solid #000; background-color: #fff;}

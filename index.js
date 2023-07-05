@@ -367,6 +367,10 @@ app.get("/subinquiry",(req,res)=>{
     res.render("subclick.ejs",{login:req.user})
 })
 
+app.get("/mypagepass",(req,res)=>{
+    res.render("mypagepass.ejs",{login:req.user})
+})
+
 // app.get("/sub4",(req,res)=>{
 //     res.render("subCont4_2.ejs",{login:req.user})
 // })
