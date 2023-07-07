@@ -5,27 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="/css/inqulry_3.css">
 </head>
 <body>
+    <div id="header">
+        <div class="center">
+            <div class="title">
+                <h1 class="logo"><a href="/"><img src="/img/Zara_logo.png"></a></h1>
+                <p>문의 답변입니다.</p>
+            </div>
+        </div>
+    </div>
     <div id="container">
         <div class="center">
-            <div class="title">제목</div>
             <div class="user">
                 <h4><%- data.title %></h4>
-                <div class="contBox">
-                    <div class="top_content">
-                        <div class="content" style="line-height: 30px;">
-                            <p style="white-space: pre-line;">
-                                <%- data.content %>
-                            </p>
-                            <p><%- data.author %></p>
-                        </div>
-                    </div>
-                </div>
+                <p class="autor">작성자:<%- data.author %></p>
+                <p class="content"><%- data.content %></p>
             </div>
             <div class="btns">
                 <a href="/sub4">목록</a>
-                <a class="update">수정</a>
             </div>
         </div>
     </div>
